@@ -65,3 +65,18 @@ cd CarND-Capstone/ros
 roslaunch launch/site.launch
 ```
 5. Confirm that traffic light detection works on real life images
+
+
+## Sample images from the simulator
+[//]: # (Image References)
+[image1]: ./output_images/1.png "At red light"
+[image2]: ./output_images/2.png "When green light is ON"
+[image3]: ./output_images/3.png "At green light"
+[image4]: ./output_images/4.png "On road"
+[image5]: ./output_images/5.png "Motion on green light"
+
+![alt text][image1]
+![alt text][image2]
+![alt text][image3]
+![alt text][image4]
+![alt text][image5]
