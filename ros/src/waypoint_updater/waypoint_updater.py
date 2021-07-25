@@ -24,7 +24,7 @@ as well as to verify your TL classifier.
 TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 '''
 
-LOOKAHEAD_WPS = 200  # Number of waypoints we will publish. You can change this number
+LOOKAHEAD_WPS = 50  # Number of waypoints we will publish.
 MAX_DECEL = 0.5  # acceleration should not exceed 10 m/s^2 and jerk should not exceed 10 m/s^3.
 CONST_DECEL = 1 / LOOKAHEAD_WPS  # to smooth braking, as discussed in video
 
@@ -58,9 +58,9 @@ class WaypointUpdater(object):
         self.spin()
 
     def spin(self):
-        # the waypoint_follower (consumer) runs at ~50Hz in dbw_node
+        # the waypoint_follower (consumer) runs at ~50Hz in dbw_node, so less than that is expected
         # this gives controls over the publishing frequency
-        rate = rospy.Rate(50)
+        rate = rospy.Rate(30)
         while not rospy.is_shutdown():
             if self.pose and self.base_lane:
                 # get closest waypoint and publish waypoints after that
